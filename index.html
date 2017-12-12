@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Game 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery-3.2.1.min.js"></script>
+        <style>
+            table{
+                width: 500px;
+                height: 400px;
+                margin-top: 100px;
+                border: 2px solid black;
+                background-color: gray;
+            }
+            tr {
+
+            }
+            .empty {
+
+            }
+            .normal {
+                width: 30px;
+                height: 30px;
+                background-color: beige;
+            }
+            .ball {
+                width: 30px;
+                height: 30px;
+                background-color: aquamarine;
+            }
+            .circle {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: green;
+                margin-left: 30%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <center>
+                <table class="table">
+                    <thead> <b> <center> Game to check your talent </center> </b> </thead>
+                    <tbody>
+                        <tr>
+                            <td class="empty">  </td>
+                            <td class="empty">  </td>
+                            <td class="ball" id="pos1" data="-1_3">
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos2" data="0_3"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos3" data="1-3"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="empty">  </td>
+                            <td class="empty">  </td>
+                        </tr>
+                        <tr>
+                            <td class="empty">  </td>
+                            <td class="empty">  </td>
+                            <td class="ball" id="pos4" data="-1_2"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos5" data="0_2"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos6" data="1_2"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="empty">  </td>
+                            <td class="empty">  </td>
+                        </tr>
+                        <tr>
+                            <td class="ball" id="pos7" data="-3_1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos8" data="-2_1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos9" data="-1_1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos10" data="0_1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos11" data="1_1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos12" data="2_1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos13" data="3_1"> 
+                                <div class="circle"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ball" id="pos14" data="-3_0"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos15" data="-2_0"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos16" data="-1_0"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="normal" id="pos17" data="0_0"> 
+                                <div class=""></div>
+                            </td>
+                            <td class="ball" id="pos18" data="1_0"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos19" data="2_0"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos20" data="3_0"> 
+                                <div class="circle"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ball" id="pos21" data="-3_-1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos22" data="-2_-1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos23" data="-1_-1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos24" data="0_-1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos25" data="1_-1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos26" data="2_-1"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos27" data="3_-1"> 
+                                <div class="circle"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="empty">  </td>
+                            <td class="empty">  </td>
+                            <td class="ball" id="pos28" data="-1_-2"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos29" data="0_-2"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos30" data="1_-2"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="empty">  </td>
+                            <td class="empty">  </td>
+                        </tr>
+                        <tr>
+                            <td class="empty">  </td>
+                            <td class="empty">  </td>
+                            <td class="ball" id="pos31" data="-1_-3"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos32" data="0_-3"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="ball" id="pos33" data="1_-3"> 
+                                <div class="circle"></div>
+                            </td>
+                            <td class="empty">  </td>
+                            <td class="empty">  </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+        </div>
+        <script>
+            marked = 0;
+            dataVal = 0;
+            newDataVale = 0;
+            $("td").each(function (index) {
+                $(this).on("click", function () {
+                    var className = $(this).attr('class');
+                    if (className == "ball") {
+                        if (marked == 0) {
+                            marked = index;
+                            dataVal = $('td:eq(' + marked + ')').attr('data');//alert("d = " + dataVal);
+                            $(this).css("background-color", "red");
+                        } else {
+                            var markedBlock = $('td:eq(' + marked + ')');
+                            marked = index;
+                            dataVal = $('td:eq(' + marked + ')').attr('data');//alert("d = " + dataVal);
+                            markedBlock.css("background-color", "aquamarine");
+                            $(this).css("background-color", "red");
+                        }
+                    }
+                    if (className == "normal") {
+                        if (marked == 0) {
+                            alert("Please select a marbel first");
+                        } else {
+                            newDataVal = $('td:eq(' + index + ')').attr('data');//alert("nd = " + newDataVal);
+                            if (checkDiff(dataVal, newDataVal)) {
+                                
+                                var midPos = getMiddlePos(dataVal, newDataVal);
+                                emptyMiddleCell(midPos);
+                                
+                                var markedBlock = $('td:eq(' + marked + ')');
+                                markedBlock.css("background-color", "aquamarine");
+                                markedBlock.find('div').remove('circle');
+                                markedBlock.find('div').remove('div');
+                                markedBlock.removeClass('ball');
+                                markedBlock.addClass('normal');
+                                markedBlock.css("background-color","beige");
+                                marked = index;
+                                newDataVal = $('td:eq(' + marked + ')').attr('data');
+                                $(this).css("background-color", "red");
+                                $(this).find('div').remove('div');
+                                $(this).append("<div class='circle'></div>");
+                                $(this).removeClass('normal');
+                                $(this).addClass('ball');
+                            } else {
+                                alert("Invalide Move !");
+                            }
+                        }
+                    }
+                });
+            });
+            //function to check the difference
+            function checkDiff(d, nd){//alert("d =" + d + " nd =" + nd);
+                var d = d.split("_");
+                var nd = nd.split("_");
+                if(d[0] == nd[0]){
+                    if(d[1] != nd[1]){
+                        if(getDiff(d[1], nd[1]) == 2){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }
+                }else if(d[1] == nd[1]){
+                    if(d[0] != nd[0]){
+                        if(getDiff(d[0], nd[0]) == 2){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }
+                }else{
+                    return false;
+                }
+            }
+            //function to get difference value
+            function getDiff(a, b){
+                return Math.abs(a - b);
+            }
+            
+            //function to get middle position
+            function getMiddlePos(oldIndex, newIndex){
+                var d = oldIndex.split("_");
+                var nd = newIndex.split("_");
+                if(d[0] == nd[0]){
+                    if(d[1] != nd[1]){
+                        var diff = getMiddleCoOrdinate(d[1], nd[1]);
+                        var midCO = d[0] + '_' + diff;
+                    }
+                }else if(d[1] == nd[1]){
+                    if(d[0] != nd[0]){
+                        var diff = getMiddleCoOrdinate(d[0], nd[0]);
+                        var midCO = diff + '_' + d[1];
+                    }
+                }
+                return midCO.toString();
+            }
+            
+            //function to get middle co-ordinate
+            function getMiddleCoOrdinate(first, last){
+                first = Number(first);
+                last = Number(last);
+                return Math.round((first + last)/2);
+            }
+            
+            //function to get id by co-ordinate
+            function emptyMiddleCell(dataVal){
+                $('.ball').each(function( index ) {
+                    var data = $(this).attr('data');
+                    if(data == dataVal){
+                        var id = this.id;
+                        $('#'+id).find('div').remove('circle');
+                        $('#'+id).find('div').remove('div');
+                        $('#'+id).removeClass('ball');
+                        $('#'+id).addClass('normal');
+                    }
+                });
+            }
+            //function to fill the cell
+            function fillCellOnClick(dataVal){
+                $('.ball').each(function( index ) {
+                    var data = $(this).attr('data');
+                    if(data == dataVal){
+                        var id = this.id;
+                        $('#'+id).removeClass('normal');
+                        $('#'+id).addClass('ball');
+                        $('#'+id).append('<div class="circle"></div>');
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
