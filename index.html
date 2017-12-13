@@ -210,22 +210,27 @@ and open the template in the editor.
                             if (checkDiff(dataVal, newDataVal)) {
                                 
                                 var midPos = getMiddlePos(dataVal, newDataVal);
-                                emptyMiddleCell(midPos);
+                                if(getMiddleId(midPos)){
+                                    emptyMiddleCell(midPos);    //make the middle cell empty
                                 
-                                var markedBlock = $('td:eq(' + marked + ')');
-                                markedBlock.css("background-color", "aquamarine");
-                                markedBlock.find('div').remove('circle');
-                                markedBlock.find('div').remove('div');
-                                markedBlock.removeClass('ball');
-                                markedBlock.addClass('normal');
-                                markedBlock.css("background-color","beige");
-                                marked = index;
-                                newDataVal = $('td:eq(' + marked + ')').attr('data');
-                                $(this).css("background-color", "red");
-                                $(this).find('div').remove('div');
-                                $(this).append("<div class='circle'></div>");
-                                $(this).removeClass('normal');
-                                $(this).addClass('ball');
+                                    var markedBlock = $('td:eq(' + marked + ')');
+                                    markedBlock.css("background-color", "aquamarine");
+                                    markedBlock.find('div').remove('circle');
+                                    markedBlock.find('div').remove('div');
+                                    markedBlock.removeClass('ball');
+                                    markedBlock.addClass('normal');
+                                    markedBlock.css("background-color","beige");
+                                    
+                                    marked = index;
+                                    newDataVal = $('td:eq(' + marked + ')').attr('data');
+                                    $(this).css("background-color", "red");
+                                    $(this).find('div').remove('div');
+                                    $(this).append("<div class='circle'></div>");
+                                    $(this).removeClass('normal');
+                                    $(this).addClass('ball');
+                                } else {
+                                    alert("Invalide Move !");
+                                }
                             } else {
                                 alert("Invalide Move !");
                             }
@@ -278,6 +283,21 @@ and open the template in the editor.
                     }
                 }
                 return midCO.toString();
+            }
+            
+            //function to get middle co-ordinate Id
+            function getMiddleId(dataVal){
+                className = false;
+                $('.ball').each(function( index ) {
+                    var data = $(this).attr('data');
+                    if(data == dataVal){
+                        var id = this.id;
+                        if($('#'+ id).find('div').attr('class') == 'circle'){
+                            className = true;
+                        }
+                    }
+                });
+                return className;
             }
             
             //function to get middle co-ordinate
