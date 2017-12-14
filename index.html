@@ -150,7 +150,9 @@ and open the template in the editor.
                         </tr>
                     </tbody>
                 </table>
-                <button class="reset" onclick="location.reload()"> Reset </button>
+                <div>
+                    <button class="reset" onclick="location.reload()"> Reset </button>
+                </div>
             </center>
         </div>
         <script>
@@ -185,7 +187,7 @@ and open the template in the editor.
                             if (checkDiff(dataVal, newDataVal)) {
                                 
                                 var midPos = getMiddlePos(dataVal, newDataVal);
-                                if(getMiddleId(midPos)){
+                                if(getMiddleId(midPos)){        //check if middle cell is there or not
                                     emptyMiddleCell(midPos);    //make the middle cell empty
                                 
                                     var markedBlock = $('td:eq(' + marked + ')');
@@ -198,7 +200,7 @@ and open the template in the editor.
                                     
                                     marked = index;
                                     newDataVal = $('td:eq(' + marked + ')').attr('data');
-                                    $(this).css("background-color", "red");
+                                    $(this).css("background-color", "aquamarine");
                                     $(this).find('div').remove('div');
                                     $(this).append("<div class='circle'></div>");
                                     $(this).removeClass('normal');
@@ -292,6 +294,7 @@ and open the template in the editor.
                         $('#'+id).find('div').remove('div');
                         $('#'+id).removeClass('ball');
                         $('#'+id).addClass('normal');
+                        $('#'+id).css("background-color","beige");
                     }
                 });
             }
