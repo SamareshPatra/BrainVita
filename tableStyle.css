@@ -33,3 +33,8 @@ tr {
     background: green;
     margin-left: 30%;
 }
+.reset {
+    background-color: #ADFF2F;
+    margin-left: 35%;
+    padding: 5px;
+}
