@@ -160,3 +160,7 @@ $(document).ready(function () {
     }
 
 });
+//disabled right click option
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false);
