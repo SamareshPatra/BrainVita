@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Game 1</title>
+        <title> BrainVita </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="jquery-3.2.1.min.js"></script>
@@ -154,6 +154,7 @@ and open the template in the editor.
                 </table>
                 <div>
                     <button class="reset" onclick="location.reload()"> Reset </button>
+                    <span><span class="moves"> Total Moves: </span><span class="totalMoves"> 0 </span></span>
                 </div>
             </center>
         </div>
@@ -166,10 +167,17 @@ and open the template in the editor.
                     <span> <i><u> Step1: </u></i> Click on a ball </span>
                 </div>
                 <div class="addStep">
-                    <span> <i><u> Step2: </u></i> Need to move 2 steps towards up, down, left or right and place the ball into any empty cell </span>
+                    <span> <i><u> Step2: </u></i> Move 2 steps towards up, down, left or right and place the ball into any empty cell </span>
                 </div>
                 <div class="addStep">
                     <span> <i><u> Step3: </u></i> Select next ball and follow step 1 and 2</span>
+                </div>
+                <br>
+                <div class="addStep">
+                    <span> <i><u> Rule1: </u></i> Can only move 2 steps at a time, neither 1 step or more than 2 steps</span>
+                </div>
+                <div class="addStep">
+                    <span> <i><u> Rule2: </u></i> Can not move in cross direction, only straight </span>
                 </div>
             </div>
             <div class="addStep">
