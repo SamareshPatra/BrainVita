@@ -7,6 +7,7 @@ $(document).ready(function () {
     marked = 0;
     dataVal = 0;
     newDataVale = 0;
+    totalSteps = 0;
     $("td").each(function (index) {
         $(this).on("click", function () {
             var className = $(this).attr('class');
@@ -53,6 +54,9 @@ $(document).ready(function () {
                             $(this).append("<div class='circle'></div>");
                             $(this).removeClass('normal');
                             $(this).addClass('ball');
+                            //calculate and display total moves
+                            totalSteps++;
+                            $('.totalMoves').text(totalSteps);
                         } else {
                             alert("Invalide Move !");
                         }
@@ -161,6 +165,6 @@ $(document).ready(function () {
 
 });
 //disabled right click option
-document.addEventListener("contextmenu", function(e){
-    e.preventDefault();
-}, false);
+//document.addEventListener("contextmenu", function(e){
+//    e.preventDefault();
+//}, false);
