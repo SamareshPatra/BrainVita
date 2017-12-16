@@ -8,6 +8,7 @@ $(document).ready(function () {
     dataVal = 0;
     newDataVale = 0;
     totalSteps = 0;
+    ballsLeft = 32;
     $("td").each(function (index) {
         $(this).on("click", function () {
             var className = $(this).attr('class');
@@ -54,9 +55,15 @@ $(document).ready(function () {
                             $(this).append("<div class='circle'></div>");
                             $(this).removeClass('normal');
                             $(this).addClass('ball');
+                            
                             //calculate and display total moves
                             totalSteps++;
                             $('.totalMoves').text(totalSteps);
+                            
+                            //calculate and display balls left
+                            ballsLeft--;
+                            $('.totalBalls').text(ballsLeft);
+                            
                         } else {
                             alert("Invalide Move !");
                         }
